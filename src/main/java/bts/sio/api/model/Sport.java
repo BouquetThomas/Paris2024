@@ -27,7 +27,4 @@ import java.util.Set;
     @ManyToOne
     @JoinColumn(name = "olympiade_id")
     private Olympiade olympiade;
-
-    @OneToMany (mappedBy = "sport")
-    private Set<Epreuve> LesEpreuves;
 }
