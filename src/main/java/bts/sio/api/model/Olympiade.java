@@ -14,6 +14,7 @@ public class Olympiade {
 
     private String numero;
     private Integer annee;
+
     private String ville ;
 
     /*@ManyToOne
@@ -21,5 +22,7 @@ public class Olympiade {
     private Pays pays;
 
      */
+
+
 
 }

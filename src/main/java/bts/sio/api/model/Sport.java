@@ -21,12 +21,13 @@ import java.util.Set;
     @Column(name = "descriptif")
     private String descriptif;
 
+    @Column(name = "nom_image")
+    private String nom_image;
+
     @ManyToOne
     @JoinColumn(name = "olympiade_id")
     private Olympiade olympiade;
 
     @OneToMany (mappedBy = "sport")
     private Set<Epreuve> LesEpreuves;
-
-
 }

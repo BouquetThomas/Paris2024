@@ -45,7 +45,7 @@ public class SportController {
      * @return - An Iterable object of Athlete full filled
      */
     @GetMapping("/sports")
-    public Iterable<Sport> getSport() {
+    public Iterable<Sport> getSports() {
         return sportService.getSports();
     }
 
@@ -68,6 +68,10 @@ public class SportController {
             String descriptif = sport.getDescriptif();
             if(descriptif != null) {
                 currentSport.setDescriptif(descriptif);;
+            }
+            String nom_image = sport.getNom_image();
+            if(nom_image != null) {
+                currentSport.setNom_image(nom_image);;
             }
             Olympiade olympiade_id = sport.getOlympiade();
             if(olympiade_id != null) {

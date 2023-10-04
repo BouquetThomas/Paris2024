@@ -14,8 +14,8 @@ public class Epreuve {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nom")
-    private String nom;
+    @Column(name = "libelle")
+    private String libelle;
 
     @ManyToOne
     @JoinColumn(name = "sport_id")
