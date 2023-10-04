@@ -21,8 +21,8 @@ import java.util.Set;
     @Column(name = "descriptif")
     private String descriptif;
 
-    @Column(name = "nomImage")
-    private String nomImage;
+    @Column(name = "nom_image")
+    private String nom_image;
 
     @ManyToOne
     @JoinColumn(name = "olympiade_id")
@@ -30,6 +30,4 @@ import java.util.Set;
 
     @OneToMany (mappedBy = "sport")
     private Set<Epreuve> LesEpreuves;
-
-
 }
