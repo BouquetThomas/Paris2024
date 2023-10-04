@@ -62,9 +62,9 @@ public class EpreuveController {
         if(e.isPresent()) {
             Epreuve currentEpreuve = e.get();
 
-            String nom = epreuve.getNom();
-            if(nom != null) {
-                currentEpreuve.setNom(nom);
+            String libelle = epreuve.getLibelle();
+            if(libelle != null) {
+                currentEpreuve.setLibelle(libelle);
             }
 
             Sport sport_id = epreuve.getSport();
