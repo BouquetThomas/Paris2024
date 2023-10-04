@@ -4,14 +4,13 @@ import bts.sio.api.model.Olympiade;
 
 import bts.sio.api.service.OlympiadeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@RestController
 public class OlympiadeController {
+
     @Autowired
     private OlympiadeService olympiadeService;
     /**
@@ -34,7 +33,7 @@ public class OlympiadeController {
      * @return - An Iterable object of Athlete full filled
      */
     @GetMapping("/olympiades")
-    public Iterable<Olympiade> getOlympiade() {
+    public Iterable<Olympiade> getLesOlympiades() {
         return olympiadeService.getLesOlympiades()  ;
     }
 
