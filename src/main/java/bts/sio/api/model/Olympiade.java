@@ -14,10 +14,5 @@ public class Olympiade {
 
     private String numero;
     private Integer annee;
-    private String ville ;
-
-    @ManyToOne
-    @JoinColumn(name = "pays_id")
-    private Pays pays;
-
+    private String ville;
 }
