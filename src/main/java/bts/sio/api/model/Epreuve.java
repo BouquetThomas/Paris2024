@@ -25,12 +25,6 @@ public class Epreuve {
     @Column(name = "date_fin")
     private LocalDate dateFin;
 
-    @Column(name = "date_debut")
-    private String date_debut;
-
-    @Column(name = "date_fin")
-    private String date_fin;
-
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;
