@@ -14,12 +14,17 @@ public class Athlete {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="nom")
+    @Column(name = "nom")
     private String nom;
 
-    @Column(name="prenom")
+    @Column(name = "prenom")
     private String prenom;
 
-    @Column(name="date_naissance")
-    private LocalDate date_naissance;
+    @Column(name = "dateNaissance")
+    private LocalDate dateNaissance;
+
+    @ManyToOne
+    @JoinColumn(name = "pays_id")
+    private Pays pays;
+
 }

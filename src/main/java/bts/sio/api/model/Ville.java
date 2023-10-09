@@ -1,13 +1,12 @@
 package bts.sio.api.model;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "sport")
-public class Sport {
+@Table(name = "ville")
+public class Ville {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,13 +15,8 @@ public class Sport {
     @Column(name = "nom")
     private String nom;
 
-    @Column(name = "descriptif")
-    private String descriptif;
-
-    @Column(name = "nomImage")
-    private String nomImage;
-
     @ManyToOne
-    @JoinColumn(name = "olympiade_id")
-    private Olympiade olympiade;
+    @JoinColumn(name = "pays_id")
+    private Pays pays;
+
 }
