@@ -31,7 +31,7 @@ public class EpreuveService {
         return saveEpreuve;
     }
 
-    public List<Epreuve> getEpreuvesBySport(Long sport_id) {
+    public List<Epreuve> getEpreuvesBySport_id(Long sport_id) {
         return epreuveRepository.findBySport_id(sport_id);
     }
 }

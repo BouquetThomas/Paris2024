@@ -43,8 +43,8 @@ public class EpreuveController {
     }
 
     @GetMapping("/epreuves/sport/{sport_id}")
-    public List<Epreuve> getEpreuvesBySport(@PathVariable("sport_id") final Long sport_id) {
-        return epreuveService.getEpreuvesBySport(sport_id);
+    public List<Epreuve> getEpreuvesBySport_id(@PathVariable("sport_id") final Long sport_id) {
+        return epreuveService.getEpreuvesBySport_id(sport_id);
     }
 
     /**
