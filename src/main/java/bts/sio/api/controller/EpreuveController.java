@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import bts.sio.api.service.EpreuveService;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
@@ -67,6 +68,15 @@ public class EpreuveController {
                 currentEpreuve.setLibelle(libelle);
             }
 
+            LocalDate date_debut = epreuve.getDateDebut();
+            if(date_debut != null) {
+                currentEpreuve.setDateDebut(date_debut);
+            }
+
+            LocalDate date_fin = epreuve.getDateFin();
+            if(date_fin != null) {
+                currentEpreuve.setDateFin(date_fin);
+            }
             Sport sport_id = epreuve.getSport();
             if(sport_id != null) {
                 currentEpreuve.setSport(sport_id);;
