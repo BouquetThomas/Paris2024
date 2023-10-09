@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import bts.sio.api.repository.EpreuveRepository;
 
+import java.util.List;
 import java.util.Optional;
 @Data
 @Service
@@ -28,5 +29,9 @@ public class EpreuveService {
     public Epreuve saveEpreuve(Epreuve epreuve) {
         Epreuve saveEpreuve = epreuveRepository.save(epreuve);
         return saveEpreuve;
+    }
+
+    public List<Epreuve> getEpreuvesBySport_id(Long sport_id) {
+        return epreuveRepository.findBySport_id(sport_id);
     }
 }
