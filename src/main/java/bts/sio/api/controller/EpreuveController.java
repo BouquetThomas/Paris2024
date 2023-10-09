@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import bts.sio.api.service.EpreuveService;
 
-import java.util.List;
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
@@ -42,11 +42,6 @@ public class EpreuveController {
         }
     }
 
-    @GetMapping("/epreuves/sport/{sport_id}")
-    public List<Epreuve> getEpreuvesBySport_id(@PathVariable("sport_id") final Long sport_id) {
-        return epreuveService.getEpreuvesBySport_id(sport_id);
-    }
-
     /**
      * Read - Get all athletes
      * @return - An Iterable object of Athlete full filled
@@ -73,19 +68,18 @@ public class EpreuveController {
                 currentEpreuve.setLibelle(libelle);
             }
 
-            String date_debut = epreuve.getDate_debut();
-            if (date_debut != null) {
-                currentEpreuve.setDate_debut(date_debut);
+            LocalDate date_debut = epreuve.getDateDebut();
+            if(date_debut != null) {
+                currentEpreuve.setDateDebut(date_debut);
             }
 
-            String date_fin = epreuve.getDate_fin();
-            if (date_fin != null) {
-                currentEpreuve.setDate_fin(date_fin);
+            LocalDate date_fin = epreuve.getDateFin();
+            if(date_fin != null) {
+                currentEpreuve.setDateFin(date_fin);
             }
-
             Sport sport_id = epreuve.getSport();
             if(sport_id != null) {
-                currentEpreuve.setSport(sport_id);
+                currentEpreuve.setSport(sport_id);;
             }
 
             epreuveService.saveEpreuve(currentEpreuve);

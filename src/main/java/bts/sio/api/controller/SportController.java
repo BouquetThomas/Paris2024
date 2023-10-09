@@ -69,9 +69,9 @@ public class SportController {
             if(descriptif != null) {
                 currentSport.setDescriptif(descriptif);;
             }
-            String nom_image = sport.getNom_image();
-            if(nom_image != null) {
-                currentSport.setNom_image(nom_image);;
+            String nomImage = sport.getNomImage();
+            if(nomImage != null) {
+                currentSport.setNomImage(nomImage);;
             }
             Olympiade olympiade_id = sport.getOlympiade();
             if(olympiade_id != null) {

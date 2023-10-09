@@ -1,13 +1,15 @@
 package bts.sio.api.model;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "Epreuve")
+@Table(name = "epreuve")
 public class Epreuve {
 
     @Id
@@ -15,7 +17,13 @@ public class Epreuve {
     private Long id;
 
     @Column(name = "libelle")
-    private String libelle;
+    private String libelle ;
+
+    @Column(name = "date_debut")
+    private LocalDate dateDebut;
+
+    @Column(name = "date_fin")
+    private LocalDate dateFin;
 
     @Column(name = "date_debut")
     private String date_debut;
@@ -26,4 +34,5 @@ public class Epreuve {
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;
+
 }

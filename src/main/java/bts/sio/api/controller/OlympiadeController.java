@@ -16,7 +16,7 @@ public class OlympiadeController {
     /**
      * Read - Get one athlete
      * @param id The id of the Olympiade
-     * @return An Epreuve object full filled
+     * @return An Olympaide object full filled
      */
     @GetMapping("/olympiade/{id}")
     public Olympiade getOlympiade(@PathVariable("id") final Long id) {
@@ -29,7 +29,7 @@ public class OlympiadeController {
     }
 
     /**
-     * Read - Get all athletes
+     * Read - Get all olympiades
      * @return - An Iterable object of Athlete full filled
      */
     @GetMapping("/olympiades")
