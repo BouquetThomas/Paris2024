@@ -17,6 +17,12 @@ public class Epreuve {
     @Column(name = "libelle")
     private String libelle;
 
+    @Column(name = "date_debut")
+    private String date_debut;
+
+    @Column(name = "date_fin")
+    private String date_fin;
+
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;

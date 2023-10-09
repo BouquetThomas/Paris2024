@@ -42,9 +42,9 @@ public class EpreuveController {
         }
     }
 
-    @GetMapping("/epreuves/sport/{sportId}")
-    public List<Epreuve> getEpreuvesBySport(@PathVariable("sportId") final Long sportId) {
-        return epreuveService.getEpreuvesBySport(sportId);
+    @GetMapping("/epreuves/sport/{sport_id}")
+    public List<Epreuve> getEpreuvesBySport(@PathVariable("sport_id") final Long sport_id) {
+        return epreuveService.getEpreuvesBySport(sport_id);
     }
 
     /**
@@ -73,9 +73,19 @@ public class EpreuveController {
                 currentEpreuve.setLibelle(libelle);
             }
 
+            String date_debut = epreuve.getDate_debut();
+            if (date_debut != null) {
+                currentEpreuve.setDate_debut(date_debut);
+            }
+
+            String date_fin = epreuve.getDate_fin();
+            if (date_fin != null) {
+                currentEpreuve.setDate_fin(date_fin);
+            }
+
             Sport sport_id = epreuve.getSport();
             if(sport_id != null) {
-                currentEpreuve.setSport(sport_id);;
+                currentEpreuve.setSport(sport_id);
             }
 
             epreuveService.saveEpreuve(currentEpreuve);
