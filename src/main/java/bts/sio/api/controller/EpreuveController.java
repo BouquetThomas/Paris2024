@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import bts.sio.api.service.EpreuveService;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -39,6 +40,11 @@ public class EpreuveController {
         } else {
             return null;
         }
+    }
+
+    @GetMapping("/epreuves/sport/{sport_id}")
+    public List<Epreuve> getEpreuvesBySport(@PathVariable("sport_id") final Long sport_id) {
+        return epreuveService.getEpreuvesBySport_id(sport_id);
     }
 
     /**
