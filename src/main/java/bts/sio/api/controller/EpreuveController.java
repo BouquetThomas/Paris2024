@@ -73,14 +73,14 @@ public class EpreuveController {
                 currentEpreuve.setLibelle(libelle);
             }
 
-            LocalDate date_debut = epreuve.getDateDebut();
+            LocalDate date_debut = epreuve.getDate_debut();
             if(date_debut != null) {
-                currentEpreuve.setDateDebut(date_debut);
+                currentEpreuve.setDate_debut(date_debut);
             }
 
-            LocalDate date_fin = epreuve.getDateFin();
+            LocalDate date_fin = epreuve.getDate_fin();
             if(date_fin != null) {
-                currentEpreuve.setDateFin(date_fin);
+                currentEpreuve.setDate_fin(date_fin);
             }
             Sport sport_id = epreuve.getSport();
             if(sport_id != null) {
