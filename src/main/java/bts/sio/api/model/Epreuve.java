@@ -19,10 +19,10 @@ public class Epreuve {
     private String libelle ;
 
     @Column(name = "date_debut")
-    private LocalDate dateDebut;
+    private LocalDate date_debut;
 
     @Column(name = "date_fin")
-    private LocalDate dateFin;
+    private LocalDate date_fin;
 
     @ManyToOne
     @JoinColumn(name = "sport_id")
