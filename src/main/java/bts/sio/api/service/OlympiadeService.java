@@ -1,5 +1,6 @@
 package bts.sio.api.service;
 
+import bts.sio.api.model.Athlete;
 import bts.sio.api.model.Olympiade;
 import bts.sio.api.model.Pays;
 import bts.sio.api.repository.OlympiadeRepository;
@@ -22,6 +23,15 @@ public class OlympiadeService {
 
     public Iterable<Olympiade> getLesOlympiades() {
         return olympiadeRepository.findAll();
+    }
+
+    public void deleteOlympiade(final Long id) {
+        olympiadeRepository.deleteById(id);
+    }
+
+    public Olympiade saveOlympiade(Olympiade olympiade) {
+        Olympiade saveOlympiade = olympiadeRepository.save(olympiade);
+        return saveOlympiade;
     }
 }
 
