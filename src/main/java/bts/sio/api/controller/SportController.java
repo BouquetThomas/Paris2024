@@ -1,11 +1,13 @@
 package bts.sio.api.controller;
 
+
 import bts.sio.api.model.Olympiade;
 import bts.sio.api.model.Sport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import bts.sio.api.service.SportService;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -40,6 +42,11 @@ public class SportController {
         }
     }
 
+    @GetMapping("/sports/olympiade/{olympiade_id}")
+    public List<Sport> getSportsByOlympiade(@PathVariable("olympiade_id") final Long olympiade_id) {
+        return sportService.getSportsByOlympiade_id(olympiade_id);
+    }
+
     /**
      * Read - Get all athletes
      * @return - An Iterable object of Athlete full filled
@@ -69,9 +76,9 @@ public class SportController {
             if(descriptif != null) {
                 currentSport.setDescriptif(descriptif);;
             }
-            String nomImage = sport.getNomImage();
-            if(nomImage != null) {
-                currentSport.setNomImage(nomImage);;
+            String nom_image = sport.getNom_image();
+            if(nom_image != null) {
+                currentSport.setNom_image(nom_image);;
             }
             Olympiade olympiade_id = sport.getOlympiade();
             if(olympiade_id != null) {
