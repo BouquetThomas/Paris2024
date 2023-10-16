@@ -33,5 +33,6 @@ public class OlympiadeService {
         Olympiade saveOlympiade = olympiadeRepository.save(olympiade);
         return saveOlympiade;
     }
+
 }
 

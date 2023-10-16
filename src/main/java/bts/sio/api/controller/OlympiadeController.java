@@ -2,6 +2,7 @@ package bts.sio.api.controller;
 
 
 import bts.sio.api.model.Olympiade;
+import bts.sio.api.model.Sport;
 import bts.sio.api.model.Ville;
 import bts.sio.api.service.OlympiadeService;
 import bts.sio.api.model.Pays;
@@ -19,9 +20,11 @@ public class OlympiadeController {
     private OlympiadeService olympiadeService;
     /**
      * Read - Get one athlete
-     * @param id The id of the Olympiade
+     * @param olympiade The id of the Olympiade
      * @return An Olympaide object full filled
      */
+
+
     @GetMapping("/olympiade/{id}")
     public Olympiade getOlympiade(@PathVariable("id") final Long id) {
         Optional<Olympiade> olympiade = olympiadeService.getOlympiade(id);
@@ -68,7 +71,10 @@ public class OlympiadeController {
         }
     }
 
-
+    @PostMapping("/olympiade")
+    public Olympiade createOlympiade(@RequestBody Olympiade olympiade) {
+        return olympiadeService.saveOlympiade(olympiade);
+    }
     /**
      * Delete - Delete an athlete
      * @param id - The id of the athlete to delete
